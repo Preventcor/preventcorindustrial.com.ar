@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Container from "./container";
 
@@ -57,7 +57,13 @@ export default function Testimonials() {
   );
 }
 
-function Avatar(props) {
+interface IAvatarProps {
+  image: StaticImageData;
+  name: string;
+  title: string;
+}
+
+function Avatar(props: IAvatarProps) {
   return (
     <div className="flex items-center mt-8 space-x-3">
       <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
@@ -77,10 +83,13 @@ function Avatar(props) {
   );
 }
 
-function Mark(props) {
+interface IMarkProps {
+  children: React.ReactElement | string;
+}
+
+function Mark(props: IMarkProps) {
   return (
     <>
-      {" "}
       <mark className="text-indigo-800 bg-indigo-100 rounded-md ring-indigo-100 ring-4 dark:ring-indigo-900 dark:bg-indigo-900 dark:text-indigo-200">
         {props.children}
       </mark>{" "}

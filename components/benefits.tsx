@@ -4,20 +4,20 @@ import Container from "./container";
 
 interface IBullets {
   title: string;
-  icon: React.ReactElement | string;
+  icon: React.ReactElement;
   desc: string;
 }
 
 interface BenefitsData {
-  image: StaticImageData | string | unknown;
+  image: StaticImageData;
   title: string;
   desc: string;
   bullets: IBullets[];
 }
 
 interface IBenefits {
-  data: BenefitsData | unknown;
-  imgPos?: StaticImageData | string | unknown;
+  data: BenefitsData;
+  imgPos?: StaticImageData | string;
 }
 
 export default function Benefits(props: IBenefits) {
@@ -74,8 +74,8 @@ export default function Benefits(props: IBenefits) {
 
 interface IBenefit {
   title: string;
-  icon: React.ReactElement | unknown;
-  children: React.ReactNode | unknown;
+  icon: React.ReactElement;
+  children: React.ReactNode;
 }
 
 function Benefit(props: IBenefit) {
