@@ -15,7 +15,15 @@ export default function Navbar() {
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <Link href="/">
-                  <span>Preventcor Industrial</span>
+                  <span>
+                    <Image
+                      src="/img/preventcor_logo.png"
+                      alt="Preventcor Industrial Logo"
+                      width="256"
+                      height="256"
+                      className="w-64"
+                    />
+                  </span>
                 </Link>
 
                 <Disclosure.Button

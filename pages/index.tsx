@@ -10,6 +10,8 @@ import Footer from "../components/footer";
 import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
+import Whatsapp from "../components/icons/Whatsapp";
+import Image from "next/image";
 
 //import dynamic from "next/dynamic";
 
@@ -76,6 +78,21 @@ export default function Home() {
       <Faq />
       <Cta />
       <Footer />
+      <div className="fixed bottom-10 right-10 w-16 h-16">
+        <a
+          href="https://web.whatsapp.com/send?phone=5491151653820"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="/img/whatsapp.png"
+            alt="Preventcor Industrial Logo"
+            width="384"
+            height="384"
+            className="w-96"
+          />
+        </a>
+      </div>
     </>
   );
 }

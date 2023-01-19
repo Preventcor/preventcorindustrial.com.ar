@@ -13,7 +13,13 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div>
               <Link href="/">
-                <span>Preventcor industrial</span>
+                <Image
+                  src="/img/preventcor_logo.png"
+                  alt="Preventcor Industrial Logo"
+                  width="128"
+                  height="128"
+                  className="w-32"
+                />
               </Link>
             </div>
 
