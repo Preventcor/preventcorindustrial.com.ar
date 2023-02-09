@@ -15,11 +15,7 @@ import Faq from "../components/faq";
 import Image from "next/image";
 
 //import dynamic from "next/dynamic";
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext,
-  GetServerSidePropsResult,
-} from "next";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 // const Video = dynamic(() => import("../components/video"));
 
@@ -40,7 +36,6 @@ export const getServerSideProps: GetServerSideProps = async (
     },
   };
 };
-
 interface IHomeProps {
   uaString: string;
 }
