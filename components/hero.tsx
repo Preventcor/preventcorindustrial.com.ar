@@ -12,11 +12,14 @@ export default function Hero() {
               Preventcor Industrial
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              Preventcor Industrial se dedica al mantenimiento, prevención y
-              corrección de vuestras baterías para Autoelevadores. Asi también,
-              nuestro más variado servicio de comercialización en diferentes
-              casos, sean baterías reacondicionadas con garantía propia, como
-              así también, equipos nuevos CERO horas uso.
+              Nos dedicamos al mantenimiento y prevención de Autoelevadores
+              eléctricos, enfocándonos puntualmente en baterías traccionarias y
+              cargadores. Así también contamos con el más variado servicio de
+              comercialización en baterías nacionales e importadas, equipos
+              reacondicionados con garantía y la más extensa variedad de
+              repuestos como: Fichas conectores, cables extraflex, conos
+              borneras, separadores, placas P+N, y alquiler de equipos
+              eléctricos
             </p>
           </div>
         </div>

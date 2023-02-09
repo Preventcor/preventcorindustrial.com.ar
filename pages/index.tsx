@@ -1,3 +1,5 @@
+import { parse } from "next-useragent";
+
 import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
@@ -10,10 +12,10 @@ import Footer from "../components/footer";
 import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
-import Whatsapp from "../components/icons/Whatsapp";
 import Image from "next/image";
 
 //import dynamic from "next/dynamic";
+import { isDesktop } from "react-device-detect";
 
 // const Video = dynamic(() => import("../components/video"));
 
@@ -25,7 +27,34 @@ import Image from "next/image";
 
 // const PopupWidget = dynamic(() => import("../components/popupWidget"));
 
-export default function Home() {
+export function getServerSideProps(context) {
+  return {
+    props: {
+      uaString: context.req.headers["user-agent"],
+    },
+  };
+}
+
+export default function Home(props) {
+  let ua;
+  if (props.uaString) {
+    ua = parse(props.uaString);
+  } else {
+    ua = parse(window.navigator.userAgent);
+  }
+  console.log("User Agent ", ua);
+  const checkWhatsappURL = () => {
+    if (ua && ua.isDesktop) {
+      return "https://web.whatsapp.com/send?phone=5491151653820";
+    }
+    if (ua && ua.isAndroid) {
+      return "intent://send?phone=5491151653820&text=Bienvenido%20a%20Preventcor%20Industrial#Intent;package=com.whatsapp;scheme=whatsapp;end&phone=5491151653820";
+    }
+    if (ua && ua.isIOS) {
+      return "whatsapp://send?phone=your-number-here&text=Bienvenido%20a%20Preventcor%20Industrial";
+    }
+    return "https://web.whatsapp.com/send?phone=5491151653820";
+  };
   return (
     <>
       <Head>
@@ -79,11 +108,7 @@ export default function Home() {
       <Cta />
       <Footer />
       <div className="fixed bottom-10 right-10 w-16 h-16">
-        <a
-          href="https://web.whatsapp.com/send?phone=5491151653820"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={checkWhatsappURL()} target="_blank" rel="noreferrer">
           <Image
             src="/img/whatsapp.png"
             alt="Preventcor Industrial Logo"
