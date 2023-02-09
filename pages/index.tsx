@@ -1,4 +1,4 @@
-import { parse } from "next-useragent";
+import { UserAgent, parse } from "next-useragent";
 
 import Head from "next/head";
 import Hero from "../components/hero";
@@ -15,7 +15,11 @@ import Faq from "../components/faq";
 import Image from "next/image";
 
 //import dynamic from "next/dynamic";
-import { isDesktop } from "react-device-detect";
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  GetServerSidePropsResult,
+} from "next";
 
 // const Video = dynamic(() => import("../components/video"));
 
@@ -27,22 +31,26 @@ import { isDesktop } from "react-device-detect";
 
 // const PopupWidget = dynamic(() => import("../components/popupWidget"));
 
-export function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   return {
     props: {
       uaString: context.req.headers["user-agent"],
     },
   };
-}
+};
 
-export default function Home(props) {
-  let ua;
+interface IHomeProps {
+  uaString: string;
+}
+export default function Home(props: IHomeProps) {
+  let ua: UserAgent;
   if (props.uaString) {
     ua = parse(props.uaString);
   } else {
     ua = parse(window.navigator.userAgent);
   }
-  console.log("User Agent ", ua);
   const checkWhatsappURL = () => {
     if (ua && ua.isDesktop) {
       return "https://web.whatsapp.com/send?phone=5491151653820";
@@ -50,7 +58,7 @@ export default function Home(props) {
     if (ua && ua.isAndroid) {
       return "intent://send?phone=5491151653820&text=Bienvenido%20a%20Preventcor%20Industrial#Intent;package=com.whatsapp;scheme=whatsapp;end&phone=5491151653820";
     }
-    if (ua && ua.isIOS) {
+    if (ua && ua.isIos) {
       return "whatsapp://send?phone=your-number-here&text=Bienvenido%20a%20Preventcor%20Industrial";
     }
     return "https://web.whatsapp.com/send?phone=5491151653820";
