@@ -15,7 +15,7 @@ import Faq from "../components/faq";
 import Image from "next/image";
 
 //import dynamic from "next/dynamic";
-import { GetStaticProps, GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext } from "next";
 
 // const Video = dynamic(() => import("../components/video"));
 
@@ -26,6 +26,14 @@ import { GetStaticProps, GetServerSidePropsContext } from "next";
 // const Faq = dynamic(() => import("../components/faq"));
 
 // const PopupWidget = dynamic(() => import("../components/popupWidget"));
+
+export const getStaticProps = async (context: GetServerSidePropsContext) => {
+  return {
+    props: {
+      uaString: context.req.headers["user-agent"],
+    },
+  };
+};
 
 interface IHomeProps {
   uaString: string;
@@ -115,11 +123,3 @@ export default function Home(props: IHomeProps) {
     </>
   );
 }
-
-Home.getStaticProps = async (context: GetServerSidePropsContext) => {
-  return {
-    props: {
-      uaString: context.req.headers["user-agent"],
-    },
-  };
-};
