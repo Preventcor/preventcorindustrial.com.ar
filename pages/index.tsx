@@ -27,37 +27,20 @@ import { GetServerSideProps, GetServerSidePropsContext } from "next";
 
 // const PopupWidget = dynamic(() => import("../components/popupWidget"));
 
-export const getServerSideProps: GetServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  return {
-    props: {
-      uaString: context.req.headers["user-agent"],
-    },
-  };
-};
-interface IHomeProps {
-  uaString: string;
-}
+interface IHomeProps {}
 export default function Home(props: IHomeProps) {
-  let ua: UserAgent;
-  if (props.uaString) {
-    ua = parse(props.uaString);
-  } else {
-    ua = parse(window.navigator.userAgent);
-  }
-  const checkWhatsappURL = () => {
-    if (ua && ua.isDesktop) {
-      return "https://web.whatsapp.com/send?phone=5491151653820";
-    }
-    if (ua && ua.isAndroid) {
-      return "intent://send?phone=5491151653820&text=Bienvenido%20a%20Preventcor%20Industrial#Intent;package=com.whatsapp;scheme=whatsapp;end&phone=5491151653820";
-    }
-    if (ua && ua.isIos) {
-      return "whatsapp://send?phone=your-number-here&text=Bienvenido%20a%20Preventcor%20Industrial";
-    }
-    return "https://web.whatsapp.com/send?phone=5491151653820";
-  };
+  // const checkWhatsappURL = () => {
+  //   if (ua && ua.isDesktop) {
+  //     return "https://web.whatsapp.com/send?phone=5491151653820";
+  //   }
+  //   if (ua && ua.isAndroid) {
+  //     return "intent://send?phone=5491151653820&text=Bienvenido%20a%20Preventcor%20Industrial#Intent;package=com.whatsapp;scheme=whatsapp;end&phone=5491151653820";
+  //   }
+  //   if (ua && ua.isIos) {
+  //     return "whatsapp://send?phone=your-number-here&text=Bienvenido%20a%20Preventcor%20Industrial";
+  //   }
+  //   return "https://web.whatsapp.com/send?phone=5491151653820";
+  // };
   return (
     <>
       <Head>
@@ -111,7 +94,7 @@ export default function Home(props: IHomeProps) {
       <Cta />
       <Footer />
       <div className="fixed bottom-10 right-10 w-16 h-16">
-        <a href={checkWhatsappURL()} target="_blank" rel="noreferrer">
+        <a href="#" target="_blank" rel="noreferrer">
           <Image
             src="/img/whatsapp.png"
             alt="Preventcor Industrial Logo"
