@@ -27,14 +27,6 @@ import { GetServerSidePropsContext } from "next";
 
 // const PopupWidget = dynamic(() => import("../components/popupWidget"));
 
-export const getStaticProps = async (context: GetServerSidePropsContext) => {
-  return {
-    props: {
-      uaString: context.req.headers["user-agent"],
-    },
-  };
-};
-
 interface IHomeProps {
   uaString: string;
 }
@@ -123,3 +115,11 @@ export default function Home(props: IHomeProps) {
     </>
   );
 }
+
+Home.getInitialProps = async (context: GetServerSidePropsContext) => {
+  return {
+    props: {
+      uaString: context.req.headers["user-agent"],
+    },
+  };
+};
