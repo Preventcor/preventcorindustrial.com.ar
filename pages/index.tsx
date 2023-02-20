@@ -31,10 +31,10 @@ export default function Home(props: IHomeProps) {
       return "https://web.whatsapp.com/send?phone=5491151653820";
     }
     if (isAndroid()) {
-      return "whatsapp://send?phone=5491151653820&text=Bienvenido%20a%20Preventcor%20Industrial#Intent;package=com.whatsapp;scheme=whatsapp;end&phone=5491151653820";
+      return "intent://send/+5491151653820#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end";
     }
     if (isIos()) {
-      return "whatsapp://send?phone=5491151653820&text=Bienvenido%20a%20Preventcor%20Industrial";
+      return "whatsapp://send?phone=5491151653820&text=Tengo%20una%20consulta%20sobre%20sus%20productos%20y/o%20servicios";
     }
     return "https://web.whatsapp.com/send?phone=5491151653820";
   };
