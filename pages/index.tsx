@@ -1,5 +1,3 @@
-import { UserAgent, parse } from "next-useragent";
-
 import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
@@ -13,9 +11,7 @@ import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
 import Image from "next/image";
-
-//import dynamic from "next/dynamic";
-import { GetServerSidePropsContext } from "next";
+import useMobileDetect from "../hooks/useIsMobile";
 
 // const Video = dynamic(() => import("../components/video"));
 
@@ -27,24 +23,17 @@ import { GetServerSidePropsContext } from "next";
 
 // const PopupWidget = dynamic(() => import("../components/popupWidget"));
 
-interface IHomeProps {
-  uaString: string;
-}
+interface IHomeProps {}
 export default function Home(props: IHomeProps) {
-  let ua: UserAgent;
-  if (props.uaString) {
-    ua = parse(props.uaString);
-  } else {
-    ua = parse(window.navigator.userAgent);
-  }
+  const { isDesktop, isAndroid, isIos } = useMobileDetect();
   const checkWhatsappURL = () => {
-    if (ua && ua.isDesktop) {
+    if (isDesktop()) {
       return "https://web.whatsapp.com/send?phone=5491151653820";
     }
-    if (ua && ua.isAndroid) {
+    if (isAndroid()) {
       return "intent://send?phone=5491151653820&text=Bienvenido%20a%20Preventcor%20Industrial#Intent;package=com.whatsapp;scheme=whatsapp;end&phone=5491151653820";
     }
-    if (ua && ua.isIos) {
+    if (isIos()) {
       return "whatsapp://send?phone=your-number-here&text=Bienvenido%20a%20Preventcor%20Industrial";
     }
     return "https://web.whatsapp.com/send?phone=5491151653820";
@@ -115,11 +104,3 @@ export default function Home(props: IHomeProps) {
     </>
   );
 }
-
-Home.getInitialProps = async (context: GetServerSidePropsContext) => {
-  return {
-    props: {
-      uaString: context.req.headers["user-agent"],
-    },
-  };
-};
