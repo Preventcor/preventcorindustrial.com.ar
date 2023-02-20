@@ -27,16 +27,17 @@ interface IHomeProps {}
 export default function Home(props: IHomeProps) {
   const { isDesktop, isAndroid, isIos } = useMobileDetect();
   const checkWhatsappURL = () => {
-    if (isDesktop()) {
-      return "https://web.whatsapp.com/send?phone=5491151653820";
-    }
     if (isAndroid()) {
-      return "intent://send/+5491151653820#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end";
+      return "whatsapp://app?phone=5491151653820";
     }
     if (isIos()) {
       return "whatsapp://send?phone=5491151653820&text=Tengo%20una%20consulta%20sobre%20sus%20productos%20y/o%20servicios";
     }
-    return "https://web.whatsapp.com/send?phone=5491151653820";
+    if (isDesktop()) {
+      return "https://web.whatsapp.com/send?phone=5491151653820";
+    } else {
+      return "whatsapp://send?phone=5491151653820&text=Tengo%20una%20consulta%20sobre%20sus%20productos%20y/o%20servicios";
+    }
   };
   return (
     <>
