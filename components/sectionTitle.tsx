@@ -5,7 +5,7 @@ interface IPropsSectionTitle {
   align?: string;
   pretitle: string;
   title: string;
-  children: React.ReactElement | string;
+  children?: React.ReactElement | string;
 }
 
 export default function SectionTitle(props: IPropsSectionTitle) {

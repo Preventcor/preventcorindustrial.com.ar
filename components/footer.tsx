@@ -5,7 +5,6 @@ import Container from "./container";
 
 export default function Footer() {
   const navigation = ["Servicios", "Productos", "Contacto"];
-  const legal = ["Terms", "Privacy", "Legal"];
   return (
     <div className="relative">
       <Container>
@@ -44,15 +43,6 @@ export default function Footer() {
           <div>
             <div className="flex flex-wrap flex-col w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
-                <Link key={index} href="/">
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="flex flex-wrap flex-col w-full -mt-2 -ml-3 lg:ml-0">
-              {legal.map((item, index) => (
                 <Link key={index} href="/">
                   {item}
                 </Link>

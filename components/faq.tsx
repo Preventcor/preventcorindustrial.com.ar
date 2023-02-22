@@ -35,8 +35,9 @@ export default function Faq() {
 
 const faqdata = [
   {
-    question: "Is this template completely free to use?",
-    answer: "Yes, this template is completely free to use.",
+    question: "¿Cuanto tiempo demora el mantenimiento de un autoelevador?",
+    answer:
+      "En general demora 1 semana, ya que verificamos las condiciones del autoelevador, las baterias, es un proceso que demora pero garantizamos calidad.",
   },
   {
     question: "Can I use it in a commercial project?",

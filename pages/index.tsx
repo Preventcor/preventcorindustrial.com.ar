@@ -57,37 +57,34 @@ export default function Home(props: IHomeProps) {
       <Navbar />
       <Hero />
       <SectionTitle
-        pretitle="Nextly Benefits"
-        title=" Why should you use this landing page"
+        pretitle="Servicios en Preventcor Industrial"
+        title="¿Por que deberias usas nuestros servicios?"
         align="center"
       >
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        Nuestros servicios para Autoelevadores son de primera calidad e incluyen
+        mantenimiento, prevención y corrección de baterías, asi como tambien la
+        comercialización de baterias reacondicionadas y nuevas, nuestros mas de
+        +100 clientes se encuentran satisfechos con nuestros servicios.
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
       <SectionTitle
-        pretitle="Watch a video"
-        title="Learn how to fullfil your needs"
-      >
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don forget to add one. Just like this.
-      </SectionTitle>
+        pretitle="Video de nuestros servicios"
+        title="En este video demostramos el la calidad y garantia del trabajo que realizamos."
+      />
       <Video />
       <SectionTitle
-        pretitle="Testimonials"
-        title="Here's what our customers said"
+        pretitle="Testimonios"
+        title="Opiniones de nuestros clientes"
       >
-        Testimonails is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
+        Nuestros clientes se encuentran satisfechos con la calidad y garantia
+        del servicio que ofrecemos.
       </SectionTitle>
       <Testimonials />
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle>
+      <SectionTitle
+        pretitle="FAQ"
+        title="Preguntas frecuentes de nuestros clientes"
+      ></SectionTitle>
       <Faq />
       <Cta />
       <Footer />
