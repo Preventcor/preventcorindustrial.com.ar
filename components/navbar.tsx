@@ -55,7 +55,7 @@ export default function Navbar() {
                 <Disclosure.Panel className="flex flex-wrap flex-col w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link key={index} href="/">
+                      <Link key={index} href={`#${item}`}>
                         {item}
                       </Link>
                     ))}
@@ -71,8 +71,11 @@ export default function Navbar() {
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href="/">{menu}</Link>
+                <Link key={index} href={`#${menu}`}>
+                        {menu}
+                      </Link>
               </li>
+
             ))}
           </ul>
         </div>
