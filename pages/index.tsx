@@ -13,6 +13,8 @@ import Faq from "../components/faq";
 import Image from "next/image";
 import useMobileDetect from "../hooks/useIsMobile";
 
+import "pure-react-carousel/dist/react-carousel.es.css";
+
 // const Video = dynamic(() => import("../components/video"));
 
 // const Benefits = dynamic(() => import("../components/benefits"));

@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
 import Image from "next/image";
+import Logo from "../public/img/preventcor_logo.svg";
 
 export default function Navbar() {
   const navigation = ["Servicios", "Productos", "Contacto"];
@@ -17,7 +18,7 @@ export default function Navbar() {
                 <Link href="/">
                   <span>
                     <Image
-                      src="/img/preventcor_logo.png"
+                      src={Logo}
                       alt="Preventcor Industrial Logo"
                       width="256"
                       height="256"
