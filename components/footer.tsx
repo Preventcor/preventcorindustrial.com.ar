@@ -13,7 +13,7 @@ export default function Footer() {
             <div>
               <Link href="/">
                 <Image
-                  src="/img/preventcor_logo.png"
+                  src="/img/preventcor_logo.svg"
                   alt="Preventcor Industrial Logo"
                   width="128"
                   height="128"
