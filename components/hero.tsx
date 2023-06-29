@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/hero.png";
-import { brands } from "../data/Brands";
+import { brands, clients } from "../data/Brands";
+import Carousel from "./Carousel";
 
 export default function Hero() {
   return (
@@ -44,19 +45,7 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
-            {brands && brands.map((brand, index) => {
-              return (
-                <div key={index} className="pt-2 text-gray-400 dark:text-gray-400">
-                  <Image
-                    src={brand.value}
-                    width="128"
-                    height="128"
-                    alt={brand.label}
-                    loading="lazy"
-                  />
-                </div>
-              );
-            })}
+            <Carousel data={clients} />
           </div>
         </div>
       </Container>

@@ -14,6 +14,9 @@ import Image from "next/image";
 import useMobileDetect from "../hooks/useIsMobile";
 
 import "pure-react-carousel/dist/react-carousel.es.css";
+import Container from "../components/container";
+import Carousel from "../components/Carousel";
+import { brands } from "../data/Brands";
 
 // const Video = dynamic(() => import("../components/video"));
 
@@ -74,6 +77,17 @@ export default function Home(props: IHomeProps) {
         pretitle="Video de nuestros servicios"
         title="En este video demostramos el la calidad y garantia del trabajo que realizamos."
       />
+      <Container>
+        <div className="flex flex-col justify-center">
+          <div className="text-xl text-center text-gray-700 dark:text-white">
+            Trabajamos con estas <span className="text-indigo-600">Marcas</span>
+          </div>
+
+          <div className="flex flex-wrap justify-around gap-5 mt-10 md:justify-around">
+            <Carousel data={brands} />
+          </div>
+        </div>
+      </Container>
       <Video />
       <SectionTitle
         pretitle="Testimonios"
