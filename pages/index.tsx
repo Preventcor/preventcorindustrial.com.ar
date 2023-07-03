@@ -58,7 +58,6 @@ export default function Home(props: IHomeProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Navbar />
       <Hero />
       <SectionTitle
@@ -73,14 +72,10 @@ export default function Home(props: IHomeProps) {
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
-      <SectionTitle
-        pretitle="Video de nuestros servicios"
-        title="En este video demostramos el la calidad y garantia del trabajo que realizamos."
-      />
       <Container>
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center text-gray-700 dark:text-white">
-            Trabajamos con estas <span className="text-indigo-600">Marcas</span>
+            Marcas con las que  <span className="text-indigo-600">trabajamos</span>
           </div>
 
           <div className="flex flex-wrap justify-around gap-5 mt-10 md:justify-around">
@@ -88,20 +83,13 @@ export default function Home(props: IHomeProps) {
           </div>
         </div>
       </Container>
-      <Video />
       <SectionTitle
-        pretitle="Testimonios"
-        title="Opiniones de nuestros clientes"
+        pretitle="VISIÓN"
+        title=""
+        align="center"
       >
-        Nuestros clientes se encuentran satisfechos con la calidad y garantia
-        del servicio que ofrecemos.
+      Mantenernos fieles a nuestros valores como compañía. Continuar creciendo a traves de nuevas relaciones empresariales.
       </SectionTitle>
-      <Testimonials />
-      <SectionTitle
-        pretitle="FAQ"
-        title="Preguntas frecuentes de nuestros clientes"
-      ></SectionTitle>
-      <Faq />
       <Cta />
       <Footer />
       <div className="fixed bottom-10 right-10 w-16 h-16">

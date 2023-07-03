@@ -9,7 +9,27 @@ export default function Footer() {
     <div className="relative" id="Contacto"
     >
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
+        <div className="grid justify-center justify-items-center max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-4">
+          <div>
+            <div className="flex flex-wrap flex-col w-full -mt-2 -ml-3 lg:ml-0">
+            <div>Secciones</div>
+              {navigation.map((item, index) => (
+                <Link key={index} href="/">
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="">
+            <div>Contacto</div>
+            <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
+            E-mails comercial@preventcorindustrial.com.ar
+          servicios@preventcorindustrial.com.ar
+            </div>
+            <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
+          Teléfono +54 9 11 5165-3820
+            </div>
+          </div>
           <div className="lg:col-span-2">
             <div>
               <Link href="/">
@@ -41,52 +61,6 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <div className="flex flex-wrap flex-col w-full -mt-2 -ml-3 lg:ml-0">
-              {navigation.map((item, index) => (
-                <Link key={index} href="/">
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className="">
-            <div>Siguenos</div>
-            <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
-              <a
-                href="https://twitter.com/web3templates"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">Twitter</span>
-                <Twitter />
-              </a>
-              <a
-                href="https://facebook.com/web3templates"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">Facebook</span>
-                <Facebook />
-              </a>
-              <a
-                href="https://instagram.com/web3templates"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">Instagram</span>
-                <Instagram />
-              </a>
-              <a
-                href="https://linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="sr-only">Linkedin</span>
-                <Linkedin />
-              </a>
-            </div>
-          </div>
         </div>
 
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">

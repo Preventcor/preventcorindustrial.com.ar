@@ -30,7 +30,7 @@ const Carousel: FC<Props> = ({data}) => {
         stopOnHover={false}
         centerMode={true}
         centerSlidePercentage={10}
-        className='w-full items-center justify-center'
+        className='items-center justify-center'
       >
         {data.map(item => (
             <Image className='px-4 items-center align-middle justify-center' key={item.value} width={128} height={128} src={item.value} alt={item.label} />
