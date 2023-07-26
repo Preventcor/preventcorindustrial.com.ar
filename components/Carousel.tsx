@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { Carousel as CarouselComponent } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import useMobileDetect from '../hooks/useIsMobile';
 
 
 
@@ -16,6 +17,8 @@ interface Props {
 
 const Carousel: FC<Props> = ({data}) => {
 
+  const isMobile = useMobileDetect()
+
   return (
     <div>
       <CarouselComponent
@@ -29,7 +32,7 @@ const Carousel: FC<Props> = ({data}) => {
         showArrows={true}
         stopOnHover={false}
         centerMode={true}
-        centerSlidePercentage={10}
+        centerSlidePercentage={isMobile ? 50 : 10}
         className='items-center justify-center'
       >
         {data.map(item => (
