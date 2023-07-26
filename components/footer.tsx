@@ -11,8 +11,7 @@ export default function Footer() {
       <Container>
         <div className="grid justify-center justify-items-center max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-4">
           <div>
-            <div className="flex flex-wrap flex-col w-full -mt-2 -ml-3 lg:ml-0">
-            <div>Secciones</div>
+            <div className="flex flex-wrap flex-col justify-center w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
                 <Link key={index} href="/">
                   {item}
@@ -46,9 +45,7 @@ export default function Footer() {
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
               Oficinas comerciales: La Isabella 18 - Ituzaingó - Provincia de
               Buenos Aires. <br /> Depósito Logístico: Ex Ruta 7 - Partido de
-              Moreno - Provincia de Buenos Aires. <br /> Teléfonos:
-              Administración: +54 9 11 2404-0805 Servicio Técnico: +54
-              9115-805-8509
+              Moreno - Provincia de Buenos Aires. <br />
             </div>
 
             <div className="mt-5">

@@ -74,7 +74,7 @@ export default function Home(props: IHomeProps) {
       <Benefits imgPos="right" data={benefitTwo} />
       <Container>
         <div className="flex flex-col justify-center">
-          <div className="text-xl text-center text-gray-700 dark:text-white">
+          <div className="text-4xl text-center text-gray-700 dark:text-white">
             Marcas con las que  <span className="text-indigo-600">trabajamos</span>
           </div>
 

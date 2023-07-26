@@ -45,7 +45,7 @@ export default function Hero() {
       </Container>
       <Container>
         <div className="flex flex-col justify-center">
-          <div className="text-xl text-center text-gray-700 dark:text-white">
+          <div className="text-4xl text-center text-gray-700 dark:text-white">
           Marcas que nos confían sus <span className="text-indigo-600">Maquinas</span>
           </div>
 
